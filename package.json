@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -14,5 +14,8 @@
     "nuxt": "^3.8.0",
     "vue": "^3.3.6",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@storyblok/nuxt": "^5.7.4"
   }
 }
