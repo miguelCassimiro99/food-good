@@ -29,7 +29,7 @@ const toggleMenu = () => {
       </div>
 
       <div>
-        <button class="mt-14 z-50 absolute w-full top-0 bottom-0 left-0 right-0 border md:hidden" @click="toggleMenu()">
+        <button class="z-50 absolute w-full top-0 bottom-0 left-0 right-0 flex justify-center bg-white md:hidden" @click="toggleMenu()">
           <NuxtImg
             src="/food-good-principal.png"
             sizes="sm:40vw"
@@ -52,10 +52,20 @@ const toggleMenu = () => {
     </nav>
   </header>
 
-  <transition name="slide-fade" mode="out-in" class="bg-white  md:hidden">
-    <div v-if="isMenuOpen" @click.self="toggleMenu()" class="absolute w-full top-[10vh] border h-[50vw] z-10 bg-red-400">
-      <div>
-        <span>Hello world</span>
+  <transition name="slide-fade" mode="out-in" class="bg-white shadow-xl border-t  md:hidden">
+    <div v-if="isMenuOpen" @click.self="toggleMenu()" class="absolute w-full top-[10vh] h-[40vh] z-10 bg-red-400 flex flex-col justify-between p-4">
+      <div class="flex flex-col justify-start items-start h-full gap-4">
+        <NuxtLink>Food</NuxtLink>
+        <NuxtLink>Drink</NuxtLink>
+        <NuxtLink>Recipe Index</NuxtLink>
+        <NuxtLink>Features</NuxtLink>
+        <NuxtLink>Life</NuxtLink>
+      </div>
+
+      <div class="border flex justify-end gap-3">
+        <Icon name="uil:github" color="black" />
+        <Icon name="uil:github" color="black" />
+        <Icon name="uil:github" color="black" />
       </div>
     </div>
   </transition>
