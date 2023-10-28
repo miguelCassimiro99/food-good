@@ -12,6 +12,7 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.0.0",
+    "@nuxtjs/google-fonts": "^3.0.2",
     "nuxt": "^3.8.0",
     "nuxt-icon": "^0.6.1",
     "vue": "^3.3.6",
