@@ -55,7 +55,7 @@ const toggleMenu = () => {
   <transition name="slide-fade" mode="out-in" class="bg-white shadow-xl border-t  md:hidden">
     <div v-if="isMenuOpen" @click.self="toggleMenu()" class="absolute w-full top-[10vh] h-[40vh] z-10 bg-red-400 flex flex-col justify-between p-4">
       <div class="flex flex-col justify-start items-start h-full gap-4">
-        <NuxtLink>Food</NuxtLink>
+        <NuxtLink>Food teste</NuxtLink>
         <NuxtLink>Drink</NuxtLink>
         <NuxtLink>Recipe Index</NuxtLink>
         <NuxtLink>Features</NuxtLink>
