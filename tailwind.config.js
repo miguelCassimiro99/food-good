@@ -15,6 +15,7 @@ module.exports = {
         sans: [...defaultTheme.fontFamily.sans],
         questrial: "Questrial",
         roboto: "Roboto",
+        tilt: "Tilt Neon"
       }
     },
   }

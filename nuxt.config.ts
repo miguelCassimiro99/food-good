@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     families: {
       Questrial: true,
       Roboto: true,
+      'Tilt+Neon': true,
     },
   },
 })

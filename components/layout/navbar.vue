@@ -49,25 +49,28 @@ const socialNetWorks = [
 
 </script>
 <template>
-<div class="flex flex-col w-full px-0 md:px-8 relative">
-  <div class="justify-between items-center hidden md:flex">
+<div class="flex flex-col w-full relative">
+  <div class="justify-between items-center hidden md:flex max-w-7xl px-0 md:px-12 md:py-4 font-tilt uppercase font-extrabold text-sm text-secondary-dark">
     <div class="flex gap-3">
       <NuxtLink to="#">About</NuxtLink>
       <NuxtLink to="#">Contact</NuxtLink>
     </div>
 
     <div class="flex gap-3">
-      <NuxtLink to="#">Instagram</NuxtLink>
-      <NuxtLink to="#">Github</NuxtLink>
-      <NuxtLink to="#">Discord</NuxtLink>
-      <NuxtLink to="#">Pinteres</NuxtLink>
+      <NuxtLink
+        v-for="network in socialNetWorks"
+        :key="network.icon"
+        :to="network.url"
+      >
+        <Icon :name="network.icon" class="w-5 h-5 text-secondary-dark" />
+      </NuxtLink>
     </div>
   </div>
-  <header class="h-[10vh] w-[100vw] flex justify-center items-center relative shadow-sm">
-    <nav class="flex justify-between items-center h-full px-2">
-      <div class="gap-4 hidden md:flex">
-        <NuxtLink to="#">About</NuxtLink>
-        <NuxtLink to="#">Contact</NuxtLink>
+  <header class="h-[10vh] w-[100vw] flex justify-center items-center relative shadow-md">
+    <nav class="flex justify-center items-center h-full px-2 md:gap-20 w-full max-w-7xl font- uppercase font-extrabold font-tilt text-lg text-primary-dark">
+      <div class="gap-8 hidden md:flex">
+        <NuxtLink to="#">Recipe Index</NuxtLink>
+        <NuxtLink to="#">Drinks</NuxtLink>
       </div>
 
       <div>
@@ -78,16 +81,16 @@ const socialNetWorks = [
           />
         </button>
 
-        <NuxtLink to="/" class="hidden md:block">
+        <NuxtLink to="/" class="hidden md:block mt-20">
           <NuxtImg
-            src="/food-good-principal.svg"
-            sizes="20vw"
+            src="/food-good-principal.png"
+            sizes="md:25vw"
           />
         </NuxtLink>
       </div>
 
 
-      <div class="gap-4 hidden md:flex">
+      <div class="gap-8 hidden md:flex">
         <NuxtLink to="#">About</NuxtLink>
         <NuxtLink to="#">Contact</NuxtLink>
       </div>
@@ -100,7 +103,7 @@ const socialNetWorks = [
         <NuxtLink
           v-for="option in menuOptions"
           :key="option.label"
-          class="font-extrabold tracking-wide uppercase text-primary-dark font-questrial"
+          class="font-extrabold tracking-wide uppercase text-primary-dark font-tilt"
         >
           {{ option.label }}
         </NuxtLink>
