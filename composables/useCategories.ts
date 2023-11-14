@@ -2,6 +2,13 @@ const state = reactive({
   categories: [],
 })
 
+type FormatedCategoriesType = {
+  uuid: string
+  name: string
+  path: string
+  icon: string
+}
+
 export function useCategories() {
   const storyblokApi = useStoryblokApi()
 
@@ -15,8 +22,18 @@ export function useCategories() {
     state.categories = data.stories
   }
 
+  const formattedCategories = computed<FormatedCategoriesType[]>(() => {
+    return state.categories.map(({ uuid, name, content }: any) => ({
+      uuid,
+      name,
+      icon: content.media.filename,
+      path: content.path,
+    }))
+  })
+
   return {
     ...toRefs(state),
     fetchCategories,
+    formattedCategories,
   }
 }
