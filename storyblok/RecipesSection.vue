@@ -11,6 +11,9 @@ await fetchRecipes();
   <section v-editable="blok" class="flex flex-col justify-center items-center">
     <SectionTitle title="Receitas" />
 
+    <div class="">
+
+    </div>
     <pre>{{ recipes }}</pre>
 
     <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 content-start gap-4 my-12">
