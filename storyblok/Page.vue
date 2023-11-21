@@ -1,6 +1,6 @@
 <template>
-  <div v-editable="blok" class="py-28">
-    <div class="w-full max-w-6xl px-4 flex flex-col gap-20">
+  <div v-editable="blok" class="w-full py-10 md:py-20 lg:py-24">
+    <div class="">
       <StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
     </div>
   </div>

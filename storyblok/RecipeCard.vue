@@ -4,7 +4,7 @@ defineProps({ blok: Object })
 
 <template>
   <div v-editable="blok">
-    <article class="flex flex-col justify-center items-center relative w-[250px]">
+    <article class="group flex flex-col justify-center items-center relative w-[250px]">
       <NuxtLink
         :to="blok ? blok.path : '/'"
         class="absolute top-0 bottom-0 left-0 right-0"
@@ -17,7 +17,7 @@ defineProps({ blok: Object })
         />
       </figure>
       <h3
-        class="font-bold font-tilt text-primary-dark mt-4"
+        class="font-bold font-tilt text-primary-dark mt-4 group-hover:text-secondary-dark"
       >
         {{ blok ? blok.title : "receita" }}
       </h3>

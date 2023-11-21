@@ -50,7 +50,7 @@ const socialNetWorks = [
 </script>
 <template>
 <div class="flex flex-col w-full relative">
-  <div class="justify-between items-center hidden md:flex max-w-7xl px-0 md:px-12 md:py-4 font-tilt uppercase font-extrabold text-sm text-secondary-dark">
+  <div class="justify-between items-center hidden md:flex  px-0 md:px-12 md:py-4 font-tilt uppercase font-extrabold text-sm text-secondary-dark">
     <div class="flex gap-3">
       <NuxtLink to="#">About</NuxtLink>
       <NuxtLink to="#">Contact</NuxtLink>
@@ -76,15 +76,15 @@ const socialNetWorks = [
       <div>
         <button class="z-50 absolute w-full top-0 bottom-0 left-0 right-0 flex justify-center bg-white md:hidden" @click="toggleMenu()">
           <NuxtImg
-            src="/food-good-principal.svg"
-            sizes="sm:14vw"
+            src="/food-good-principal.png"
+            sizes="sm:35vw"
           />
         </button>
 
         <NuxtLink to="/" class="hidden md:block mt-20">
           <NuxtImg
             src="/food-good-principal.png"
-            sizes="md:25vw"
+            sizes="md:20vw"
           />
         </NuxtLink>
       </div>

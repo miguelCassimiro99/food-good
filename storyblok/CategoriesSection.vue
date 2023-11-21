@@ -6,12 +6,12 @@ await fetchCategories();
 
 </script>
 <template>
-  <section v-editable="blok" class="flex flex-col justify-center items-center">
+  <section v-editable="blok" class="container mx-auto">
     <SectionTitle title="Categorias" />
 
-    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 content-start gap-4 my-12">
+    <div class="flex justify-center items-center flex-wrap gap-4">
       <article
-        class="flex flex-col justify-center items-center relative p-4 border border-white hover:cursor-pointer"
+        class="flex flex-col justify-center w-[200px] items-center relative p-4 border border-white hover:cursor-pointer"
         v-for="{ uuid, path, icon, name } of formattedCategories"
         :key="uuid"
         >
