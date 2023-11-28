@@ -5,3 +5,8 @@
 .dev-view {
   @apply border border-red-400;
 }
+
+
+.recipe-steps-section img {
+  @apply w-1/2 my-4 rounded-lg
+}

@@ -26,12 +26,8 @@ await fetchRecipes();
         v-for="{ uuid, name, slug, image, category } of formatedRecipes"
         :key="uuid"
         >
-          <NuxtLink
-            :to="`/${slug}`"
-            class="absolute top-0 bottom-0 left-0 right-0"
-          />
-    
           <figure class="w-[200px] h-[200px] relative overflow-hidden">
+
             <NuxtImg
               :src="image.filename"
               :alt="image.alt"
@@ -39,9 +35,11 @@ await fetchRecipes();
             />
           </figure>
           <h3
-            class="font-bold font-tilt text-primary-dark mt-4 group-hover:text-secondary-dark"
+            class="font-bold font-tilt text-primary-dark py-4 group-hover:text-secondary-dark"
           >
-            {{ name }}
+            <NuxtLink :to="`/recipes/${slug}`">
+              {{ name }}
+            </NuxtLink>
           </h3>
     
       </article>

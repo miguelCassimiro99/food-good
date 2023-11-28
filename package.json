@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@marvr/storyblok-rich-text-vue-renderer": "^3.2.1",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.0.0",
     "@nuxtjs/google-fonts": "^3.0.2",
