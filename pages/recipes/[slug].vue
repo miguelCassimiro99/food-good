@@ -15,7 +15,7 @@ const recipeSteps = computed(() => renderRichText(story.content.steps));
 
 </script>
 <template>
-  <div class="container mx-auto py-10 md:py-20 flex flex-col items-center justify-start min-h-screen">
+  <div class="container mx-auto py-10 md:py-20 flex flex-col items-center justify-start min-h-screen overflow-x-hidden">
     <header v-if="story" class="relative">
       <NuxtImg
         :src="story.content.media.filename"
@@ -23,7 +23,7 @@ const recipeSteps = computed(() => renderRichText(story.content.steps));
         class="aspect-square md:rounded-lg"
       />
 
-      <div class="bg-white rounded-xl overflow-hidden shadow-md p-8 relative mx-auto -mt-6 md:mx-0 md:absolute right-0 md:w-full md:top-8 md:-right-64 max-w-lg">
+      <div class="bg-white rounded-xl overflow-hidden shadow-md p-8 relative mx-auto -mt-6 md:mx-0 md:absolute right-0 md:w-full md:top-24 md:-right-40 max-w-lg">
         <h1
           class="font-bold font-tilt text-3xl text-secondary-dark"
         >
@@ -44,7 +44,7 @@ const recipeSteps = computed(() => renderRichText(story.content.steps));
       </div>
     </header>
 
-    <article class="mt-10 md:mt-20 recipe-steps-section px-4">
+    <article class="md:mt-20 recipe-steps-section px-4">
       <h2 class="my-8 text-2xl font-bold text-primary">Modo de Preparo</h2>
 
       <div v-html="recipeSteps" class="text-primary-dark"></div>

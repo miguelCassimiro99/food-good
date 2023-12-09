@@ -84,7 +84,7 @@ const socialNetWorks = [
         <NuxtLink to="/" class="hidden md:block mt-20">
           <NuxtImg
             src="/food-good-principal.png"
-            sizes="md:20vw"
+            sizes="md:15vw"
           />
         </NuxtLink>
       </div>

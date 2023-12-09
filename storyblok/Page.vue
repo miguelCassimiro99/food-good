@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="w-full py-10 md:py-20 lg:py-24">
+  <div v-editable="blok" class="w-full py-20 lg:py-24 overflow-x-hidden">
     <div class="">
       <StoryblokComponent v-for="blok in blok.body" :key="blok._uid" :blok="blok" />
     </div>
