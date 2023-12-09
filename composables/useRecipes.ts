@@ -10,12 +10,14 @@ type FormatedRecipesType = {
   category: any
 }
 
-const { categories } = useCategories()
+const { categories, fetchCategories } = useCategories()
 
 export function useRecipes() {
   const storyblokApi = useStoryblokApi()
 
   async function fetchRecipes() {
+    await fetchCategories()
+
     const { data } = await storyblokApi.get('cdn/stories/', {
       version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
       starts_with: 'recipes/', // you pass the name for the folder that you want to fetch
@@ -23,7 +25,20 @@ export function useRecipes() {
       is_startpage: false,
     })
 
-    state.recipes = data.stories
+    if (!data.stories) return
+    let recipesList = [] as any
+    data.stories.forEach((story: any) => {
+      let recipe = {
+        ...story,
+        category: categories.value.find(
+          ({ uuid }) => uuid === story.content.category
+        ),
+      } as any
+
+      recipesList.push(recipe)
+    })
+
+    state.recipes = recipesList
   }
 
   async function fetchRecipeBySlug(slug: string) {
@@ -39,13 +54,15 @@ export function useRecipes() {
   }
 
   const formatedRecipes = computed<FormatedRecipesType[]>(() => {
-    return state.recipes.map(({ uuid, name, content, slug }: any) => ({
-      uuid,
-      name,
-      image: content.media,
-      slug,
-      category: categories.value.find(({ uuid }) => uuid === content.category),
-    }))
+    return state.recipes.map(
+      ({ uuid, name, content, slug, category }: any) => ({
+        uuid,
+        name,
+        image: content.media,
+        slug,
+        category: category,
+      })
+    )
   })
 
   return {
