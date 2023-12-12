@@ -1,5 +1,5 @@
 const state = reactive({
-  categories: [],
+  categories: [] as any,
 })
 
 type FormatedCategoriesType = {
@@ -13,13 +13,20 @@ export function useCategories() {
   const storyblokApi = useStoryblokApi()
 
   async function fetchCategories() {
-    const { data } = await storyblokApi.get('cdn/stories/', {
-      version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
-      starts_with: 'categories/', // you pass the name for the folder that you want to fetch
-      is_startpage: false,
-    })
+    try {
+      const { data } = await storyblokApi.get('cdn/stories/', {
+        version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
+        starts_with: 'categories/', // you pass the name for the folder that you want to fetch
+        is_startpage: false,
+      })
 
-    state.categories = data.stories
+      if (!data || !data.stories) throw new Error('No Categories Found')
+
+      state.categories = data.stories
+    } catch (error) {
+      console.log('ERROR')
+      return (state.categories = [])
+    }
   }
 
   const formattedCategories = computed<FormatedCategoriesType[]>(() => {

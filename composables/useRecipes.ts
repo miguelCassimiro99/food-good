@@ -1,5 +1,5 @@
 const state = reactive({
-  recipes: [],
+  recipes: [] as any,
 })
 
 type FormatedRecipesType = {
@@ -10,14 +10,12 @@ type FormatedRecipesType = {
   category: any
 }
 
-const { categories, fetchCategories } = useCategories()
+const { categories } = useCategories()
 
-export function useRecipes() {
+export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
   const storyblokApi = useStoryblokApi()
 
   async function fetchRecipes() {
-    await fetchCategories()
-
     const { data } = await storyblokApi.get('cdn/stories/', {
       version: process.env.NODE_ENV === 'production' ? 'published' : 'draft',
       starts_with: 'recipes/', // you pass the name for the folder that you want to fetch
@@ -25,13 +23,12 @@ export function useRecipes() {
       is_startpage: false,
     })
 
-    if (!data.stories) return
     let recipesList = [] as any
     data.stories.forEach((story: any) => {
       let recipe = {
         ...story,
         category: categories.value.find(
-          ({ uuid }) => uuid === story.content.category
+          ({ uuid }: any) => uuid === story.content.category
         ),
       } as any
 
@@ -64,6 +61,12 @@ export function useRecipes() {
       })
     )
   })
+
+  // const filteredRecipes = computed(() => {
+  //   state.recipes.filter((recipe: any) =>
+  //     recipe.name.toLowerCase().includes(filter.value.toLowerCase())
+  //   )
+  // })
 
   return {
     ...toRefs(state),
