@@ -27,6 +27,7 @@ const filteredRecipes = computed<FormatedRecipesType[]>(() => {
   <section class="recipes-list w-full">
     <div class="container mx-auto py-20">
       <SectionTitle title="Receitas" />
+
       <div class="w-full flex justify-between py-4">
         <ClientOnly>
           <div
