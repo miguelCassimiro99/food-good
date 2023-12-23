@@ -55,7 +55,6 @@ const socialNetWorks = [
         <NuxtLink to="#">About</NuxtLink>
         <NuxtLink to="#">Contact</NuxtLink>
       </div>
-
       <div class="flex gap-3">
         <NuxtLink
           v-for="network in socialNetWorks"
@@ -65,6 +64,7 @@ const socialNetWorks = [
         </NuxtLink>
       </div>
     </div>
+
     <header
       class="h-[10vh] w-[100vw] flex justify-center items-center relative shadow-md">
       <nav

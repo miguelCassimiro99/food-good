@@ -6,8 +6,6 @@ await fetchCategories()
 </script>
 <template>
   <section v-editable="blok" class="container mx-auto">
-    <SectionTitle title="Categorias" />
-
     <div class="flex justify-center items-center flex-wrap gap-4">
       <article
         class="flex group flex-col justify-center w-[200px] items-center relative p-4 border border-white hover:cursor-pointer"
