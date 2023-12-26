@@ -64,7 +64,6 @@ const socialNetWorks = [
         </NuxtLink>
       </div>
     </div>
-
     <header
       class="h-[10vh] w-[100vw] flex justify-center items-center relative shadow-md">
       <nav
