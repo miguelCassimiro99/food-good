@@ -1,7 +1,11 @@
 <template>
   <div>
     <NuxtLayout>
-      <NuxtPage/>
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>
+
+<!-- TODO: ingredients as tags -->
+<!-- TODO: Footer -->
+<!-- TODO: Contact -->

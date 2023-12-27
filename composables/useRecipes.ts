@@ -1,5 +1,5 @@
 const state = reactive({
-  recipes: [],
+  recipes: [] as any,
 })
 
 type FormatedRecipesType = {
@@ -12,7 +12,7 @@ type FormatedRecipesType = {
 
 const { categories } = useCategories()
 
-export function useRecipes() {
+export function useRecipes(filter?: Ref<string>, category?: Ref<string>) {
   const storyblokApi = useStoryblokApi()
 
   async function fetchRecipes() {
@@ -23,7 +23,19 @@ export function useRecipes() {
       is_startpage: false,
     })
 
-    state.recipes = data.stories
+    let recipesList = [] as any
+    data.stories.forEach((story: any) => {
+      let recipe = {
+        ...story,
+        category: categories.value.find(
+          ({ uuid }: any) => uuid === story.content.category
+        ),
+      } as any
+
+      recipesList.push(recipe)
+    })
+
+    state.recipes = recipesList
   }
 
   async function fetchRecipeBySlug(slug: string) {
@@ -39,14 +51,22 @@ export function useRecipes() {
   }
 
   const formatedRecipes = computed<FormatedRecipesType[]>(() => {
-    return state.recipes.map(({ uuid, name, content, slug }: any) => ({
-      uuid,
-      name,
-      image: content.media,
-      slug,
-      category: categories.value.find(({ uuid }) => uuid === content.category),
-    }))
+    return state.recipes.map(
+      ({ uuid, name, content, slug, category }: any) => ({
+        uuid,
+        name,
+        image: content.media,
+        slug,
+        category: category,
+      })
+    )
   })
+
+  // const filteredRecipes = computed(() => {
+  //   state.recipes.filter((recipe: any) =>
+  //     recipe.name.toLowerCase().includes(filter.value.toLowerCase())
+  //   )
+  // })
 
   return {
     ...toRefs(state),

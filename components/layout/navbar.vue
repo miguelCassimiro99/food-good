@@ -31,19 +31,19 @@ const menuOptions = [
 const socialNetWorks = [
   {
     icon: 'ph:github-logo-fill',
-    url: '#',
+    url: 'https://github.com/miguelCassimiro99',
   },
   {
     icon: 'ph:linkedin-logo-fill',
-    url: '#',
+    url: 'https://www.linkedin.com/in/miguel-cassimiro',
   },
   {
     icon: 'ph:pinterest-logo-fill',
-    url: '#',
+    url: 'https://pin.it/2eoXHcf',
   },
   {
     icon: 'ph:envelope-fill',
-    url: '#',
+    url: 'mailto:miguel.cassimiro99@gmail.com',
   },
 ]
 </script>
@@ -55,7 +55,6 @@ const socialNetWorks = [
         <NuxtLink to="#">About</NuxtLink>
         <NuxtLink to="#">Contact</NuxtLink>
       </div>
-
       <div class="flex gap-3">
         <NuxtLink
           v-for="network in socialNetWorks"
@@ -87,8 +86,8 @@ const socialNetWorks = [
         </div>
 
         <div class="gap-8 hidden md:flex">
-          <NuxtLink to="#">Ingredients</NuxtLink>
-          <NuxtLink to="#">Contact</NuxtLink>
+          <NuxtLink to="#">Ingredientes</NuxtLink>
+          <NuxtLink to="#">Contato</NuxtLink>
         </div>
       </nav>
     </header>
