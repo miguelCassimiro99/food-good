@@ -70,7 +70,6 @@ const socialNetWorks = [
         class="flex justify-center items-center h-full px-2 md:gap-20 w-full max-w-7xl font- uppercase font-extrabold font-tilt text-lg text-primary-dark">
         <div class="gap-8 hidden md:flex">
           <NuxtLink to="/recipes">Receitas</NuxtLink>
-          <NuxtLink to="#">Categories</NuxtLink>
         </div>
 
         <div>

@@ -28,10 +28,11 @@ const filteredRecipes = computed<FormatedRecipesType[]>(() => {
     <div class="container mx-auto py-20">
       <HeaderTitle title="Receitas" />
 
-      <div class="w-full flex justify-between py-4">
+      <div
+        class="w-full flex flex-col md:flex-row justify-between py-4 px-4 gap-4">
         <ClientOnly>
           <div
-            class="form-control w-1/3 bg-gray-100 flex items-center px-2 rounded-lg">
+            class="form-control bg-gray-100 flex items-center px-2 rounded-lg w-full md:w-1/3">
             <input
               type="text"
               class="w-full bg-gray-100 px-4 py-2 text-sm focus:outline-0"
@@ -44,7 +45,7 @@ const filteredRecipes = computed<FormatedRecipesType[]>(() => {
 
         <div
           v-if="categories && categories.length > 0"
-          class="form-control w-1/3 bg-gray-100 flex items-center px-2 rounded-md">
+          class="form-control bg-gray-100 flex items-center px-2 rounded-md w-full md:w-1/3">
           <select
             class="w-full bg-gray-100 rounded-lg px-4 py-2 text-sm focus:outline-0"
             v-model="categoryFiltered">
@@ -59,7 +60,8 @@ const filteredRecipes = computed<FormatedRecipesType[]>(() => {
         </div>
       </div>
 
-      <div class="grid grid-cols-4 gap-12 items-start">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-12 items-start">
         <Card
           class="col-span-1"
           v-for="recipe of filteredRecipes"
