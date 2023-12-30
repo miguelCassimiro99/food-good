@@ -8,7 +8,7 @@ await fetchRecipes()
 <template>
   <section v-editable="blok" class="flex flex-col justify-center items-center">
     <div
-      class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 content-start gap-4 my-12">
+      class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 content-start gap-4">
       <article
         class="group flex flex-col justify-center items-center relative p-4 border border-white hover:cursor-pointer"
         v-for="{ uuid, name, slug, image, category } of formatedRecipes"

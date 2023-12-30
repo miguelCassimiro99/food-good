@@ -7,24 +7,12 @@ const toggleMenu = () => {
 
 const menuOptions = [
   {
-    label: 'Food',
-    url: '#',
+    label: 'Receitas',
+    url: '/recipes',
   },
   {
-    label: 'Drink',
-    url: '#',
-  },
-  {
-    label: 'Recipe Index',
-    url: '#',
-  },
-  {
-    label: 'Features',
-    url: '#',
-  },
-  {
-    label: 'Life',
-    url: '#',
+    label: 'Contato',
+    url: '#contato',
   },
 ]
 
