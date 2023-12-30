@@ -86,7 +86,6 @@ const socialNetWorks = [
 
         <div class="gap-8 hidden md:flex">
           <NuxtLink to="#">Ingredientes</NuxtLink>
-          <NuxtLink to="#">Contato</NuxtLink>
         </div>
       </nav>
     </header>

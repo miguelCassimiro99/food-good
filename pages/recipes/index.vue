@@ -2,8 +2,15 @@
 import { ref } from 'vue'
 import type { FormatedRecipesType } from '~/types/recipes'
 
+const route = useRoute()
+const slug = route.query.category
+
+const categoryName = slug as string
+
 const filter = ref('')
 const categoryFiltered = ref('')
+
+if (categoryName) categoryFiltered.value = categoryName
 
 const { fetchRecipes, formatedRecipes } = useRecipes(filter, categoryFiltered)
 const { categories, fetchCategories } = useCategories()

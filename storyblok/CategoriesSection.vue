@@ -9,9 +9,11 @@ await fetchCategories()
     <div class="flex justify-center items-center flex-wrap gap-4">
       <article
         class="flex group flex-col justify-center w-[200px] items-center relative p-4 border border-white hover:cursor-pointer"
-        v-for="{ uuid, path, icon, name } of formattedCategories"
+        v-for="{ uuid, path, icon, name, slug } of formattedCategories"
         :key="uuid">
-        <NuxtLink :to="path" class="absolute top-0 bottom-0 left-0 right-0" />
+        <NuxtLink
+          :to="`recipes?category=${name}`"
+          class="absolute top-0 bottom-0 left-0 right-0" />
 
         <figure class="w-[50px] h-[50px] relative overflow-hidden">
           <NuxtImg

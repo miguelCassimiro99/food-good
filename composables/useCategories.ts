@@ -7,6 +7,7 @@ type FormatedCategoriesType = {
   name: string
   path: string
   icon: string
+  slug: string
 }
 
 export function useCategories() {
@@ -30,11 +31,12 @@ export function useCategories() {
   }
 
   const formattedCategories = computed<FormatedCategoriesType[]>(() => {
-    return state.categories.map(({ uuid, name, content }: any) => ({
+    return state.categories.map(({ uuid, name, content, slug }: any) => ({
       uuid,
       name,
       icon: content.media.filename,
       path: content.path,
+      slug,
     }))
   })
 
