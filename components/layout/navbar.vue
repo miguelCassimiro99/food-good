@@ -12,7 +12,7 @@ const menuOptions = [
   },
   {
     label: 'Contato',
-    url: '#contato',
+    url: '/#contato',
   },
 ]
 
@@ -40,15 +40,18 @@ const socialNetWorks = [
     <div
       class="justify-between items-center hidden md:flex px-0 md:px-12 md:py-4 font-tilt uppercase font-extrabold text-sm text-secondary-dark">
       <div class="flex gap-3">
-        <NuxtLink to="#">About</NuxtLink>
-        <NuxtLink to="#">Contact</NuxtLink>
+        <NuxtLink to="/#contact" class="hover:text-primary-dark transition-all"
+          >Contact</NuxtLink
+        >
       </div>
       <div class="flex gap-3">
         <NuxtLink
           v-for="network in socialNetWorks"
           :key="network.icon"
           :to="network.url">
-          <Icon :name="network.icon" class="w-5 h-5 text-secondary-dark" />
+          <Icon
+            :name="network.icon"
+            class="w-5 h-5 text-secondary-dark hover:text-primary-dark transition-all" />
         </NuxtLink>
       </div>
     </div>
@@ -57,7 +60,11 @@ const socialNetWorks = [
       <nav
         class="flex justify-center items-center h-full px-2 md:gap-20 w-full max-w-7xl font- uppercase font-extrabold font-tilt text-lg text-primary-dark">
         <div class="gap-8 hidden md:flex">
-          <NuxtLink to="/recipes">Receitas</NuxtLink>
+          <NuxtLink
+            to="/recipes"
+            class="hover:text-secondary-dark transition-all"
+            >Receitas</NuxtLink
+          >
         </div>
 
         <div>
@@ -73,7 +80,9 @@ const socialNetWorks = [
         </div>
 
         <div class="gap-8 hidden md:flex">
-          <NuxtLink to="#">Ingredientes</NuxtLink>
+          <NuxtLink to="#" class="hover:text-secondary-dark transition-all"
+            >Ingredientes</NuxtLink
+          >
         </div>
       </nav>
     </header>
@@ -86,11 +95,13 @@ const socialNetWorks = [
         v-if="isMenuOpen"
         @click.self="toggleMenu()"
         class="absolute w-full top-[10vh] h-[40vh] z-10 bg-red-400 flex flex-col justify-between p-8">
-        <div class="flex flex-col justify-evenly items-start h-full gap-2">
+        <div
+          class="flex flex-col justify-evenly items-start h-full gap-2 relative">
           <NuxtLink
+            :to="option.url"
             v-for="option in menuOptions"
             :key="option.label"
-            class="font-extrabold tracking-wide uppercase text-primary-dark font-tilt">
+            class="font-extrabold tracking-wide uppercase text-primary-dark font-tilt z-20">
             {{ option.label }}
           </NuxtLink>
         </div>
@@ -100,7 +111,9 @@ const socialNetWorks = [
             v-for="network in socialNetWorks"
             :key="network.icon"
             :to="network.url">
-            <Icon :name="network.icon" class="w-7 h-7 text-secondary-dark" />
+            <Icon
+              :name="network.icon"
+              class="w-7 h-7 text-secondary-dark hover:text-primary-dark transition-all" />
           </NuxtLink>
         </div>
       </div>

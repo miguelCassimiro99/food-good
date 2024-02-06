@@ -3,6 +3,14 @@ defineProps({ blok: Object })
 
 const { categories, fetchCategories, formattedCategories } = useCategories()
 await fetchCategories()
+
+const returnCategoryIcon = (slug: string) => {
+  if (slug == 'bebidas') return 'streamline-emojis:clinking-glasses-5'
+  if (slug == 'doces') return 'streamline-emojis:shaved-ice'
+  if (slug == 'comida-salgada') return 'streamline-emojis:pizza-1'
+
+  return 'streamline-emojis:pizza-1'
+}
 </script>
 <template>
   <section v-editable="blok" class="container mx-auto">
@@ -16,10 +24,9 @@ await fetchCategories()
           class="absolute top-0 bottom-0 left-0 right-0" />
 
         <figure class="w-[50px] h-[50px] relative overflow-hidden">
-          <NuxtImg
-            :src="icon"
-            :alt="name"
-            class="abolute w-full h-full object-cover cursor-pointer" />
+          <Icon
+            :name="returnCategoryIcon(slug)"
+            class="w-[50px] h-[50px] text-secondary-dark" />
         </figure>
         <h3
           class="font-bold font-tilt text-primary-dark group-hover:text-secondary-dark transition-all mt-4">

@@ -13,7 +13,9 @@ const submitForm = async () => {
 }
 </script>
 <template>
-  <div class="w-full flex flex-col justify-start items-center mb-20 h-[50vh]">
+  <div
+    id="contact"
+    class="w-full flex flex-col justify-start items-center mb-20 h-[50vh]">
     <form
       @submit.prevent="submitForm"
       class="container flex flex-col justify-start items-center gap-2 max-w-lg w-full px-4 md:px-0">
