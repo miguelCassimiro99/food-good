@@ -1,84 +1,31 @@
-# Nuxt 3 Minimal Starter
+# Food Good: a Recipes App with Nux and Storyblok
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A Recipes app developed using Nuxt 3 and Storyblok to create and list recipes and categories
 
-## Setup
+## Features 📜
+- [x]  Storyblok module
+- [x]  Tailwind Css
+- [x]  Metadata
+- [x]  Tests on Diferent Menus
+---
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
+How does it works 🔍
 
-# pnpm
-pnpm install
+Storyblok is a Headless CMS to you manage your content and with the powers of Nuxt we can build things like blogs, this app, journals, the sky it's the limit.
 
-# yarn
-yarn install
 
-# bun
-bun install
-```
+### Tools 🛠️
 
-## Development Server
+🌐 [Nuxt](https://nuxt.com/)
 
-Start the development server on `http://localhost:3000`:
+🌐 [Storyblok](https://www.storyblok.com/)
 
-```bash
-# npm
-npm run dev
+🌐 [Tailwind](https://tailwindcss.com/)
 
-# pnpm
-pnpm run dev
 
-# yarn
-yarn dev
 
-# bun
-bun run dev
-```
+## Tags:
 
-## Production
+\#nuxt \#nuxt3 \#storyblok \#cms \#tailwindcss \#recipes \#food \#foodgood
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-### Storyblok actions
-
-Creating a folder inside content named 'Categories'
-Inside that we define categories on the site so we can fetch them
-Ex: in this case we create categories to by kind of food
-'comida-salgada', 'doces', 'bebidas'
-
-So, we create a composable to handle the fetching of this guy (useCategories)
