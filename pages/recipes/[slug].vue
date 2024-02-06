@@ -14,6 +14,53 @@ const recipeIngredientsContent = computed(() =>
   renderRichText(story.content.ingredients)
 )
 const recipeSteps = computed(() => renderRichText(story.content.steps))
+
+useHead({
+  title: `${story?.content.title} - Sushi Wuut`,
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: `Como preparar ${story?.content.title}`,
+    },
+    // og
+    {
+      hid: 'og:description',
+      property: 'og:description',
+      content: story?.content.excerpt,
+    },
+    {
+      hid: 'og:title',
+      property: 'og:title',
+      content: `${story?.content.title} - Food Good`,
+    },
+    {
+      hid: 'og:type',
+      property: 'og:type',
+      content: 'article',
+    },
+    {
+      hid: 'og:url',
+      property: 'og:url',
+      content: `https://recipez-book.netlify.app/recipes/${slug}`,
+    },
+    {
+      hid: 'og:image',
+      property: 'og:image',
+      content: story?.content.media.filename,
+    },
+    {
+      hid: 'og:image:alt',
+      property: 'og:image:alt',
+      content: story?.content.media?.alt,
+    },
+    {
+      hid: 'og:publish_date',
+      property: 'og:publish_date',
+      content: story?.published_at,
+    },
+  ],
+})
 </script>
 <template>
   <div
