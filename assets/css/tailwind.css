@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dev-view {
+  @apply border border-red-400;
+}
+
+.recipe-steps-section img {
+  @apply w-1/2 my-4 rounded-lg;
+}
+
+.contact-input {
+  @apply outline-none bg-secondary rounded-sm border-b px-6 py-4 border-secondary placeholder-primary transition-all focus:border-[#333435] focus:text-primary-dark hover:border-primary h-10 md:h-14;
+}

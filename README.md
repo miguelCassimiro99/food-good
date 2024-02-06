@@ -73,3 +73,12 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+### Storyblok actions
+
+Creating a folder inside content named 'Categories'
+Inside that we define categories on the site so we can fetch them
+Ex: in this case we create categories to by kind of food
+'comida-salgada', 'doces', 'bebidas'
+
+So, we create a composable to handle the fetching of this guy (useCategories)

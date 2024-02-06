@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
+    '@nuxtjs/google-fonts',
     [
       '@storyblok/nuxt',
       {
@@ -24,5 +25,14 @@ export default defineNuxtConfig({
     config: {},
     injectPosition: 'first',
     viewer: true,
+  },
+
+  googleFonts: {
+    display: 'swap',
+    families: {
+      Questrial: true,
+      Roboto: true,
+      'Tilt+Neon': true,
+    },
   },
 })
